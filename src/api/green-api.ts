@@ -17,9 +17,9 @@ const RECEIVE_REQUEST_TIMEOUT_MS = 12_000
 const NOT_AUTHORIZED_ERROR = 'Сначала войдите: введите idInstance и apiTokenInstance'
 
 export const initialGreenApiConfig: GreenApiConfig = {
-  apiUrl: import.meta.env.VITE_GREEN_API_URL || DEFAULT_API_URL,
-  idInstance: import.meta.env.VITE_ID_INSTANCE || '',
-  apiTokenInstance: import.meta.env.VITE_API_TOKEN_INSTANCE || '',
+  apiUrl: DEFAULT_API_URL,
+  idInstance: '',
+  apiTokenInstance: '',
 }
 
 export type CredentialsProvider = () => GreenApiConfig | null
