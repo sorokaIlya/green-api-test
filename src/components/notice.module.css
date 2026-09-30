@@ -1,0 +1,22 @@
+.notice {
+  z-index: 10;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  color: #137540;
+  background: #e8faef;
+  border: 1px solid #bfe9cd;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(31, 60, 41, 0.12);
+  transform: translateX(-50%);
+  font-size: 13px;
+}
+.noticeError {
+  color: #9a2d2d;
+  background: #fff0f0;
+  border-color: #f2c2c2;
+}

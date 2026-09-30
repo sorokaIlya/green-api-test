@@ -1,0 +1,54 @@
+.rail {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 8px 22px;
+  border-right: 1px solid #e8eaed;
+  background: #fff;
+}
+.railItem {
+  display: flex;
+  width: 70px;
+  min-height: 67px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 0;
+  color: #92989e;
+  background: transparent;
+  border-radius: 12px;
+  font-size: 12px;
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+.railItem:hover {
+  color: #1984f5;
+  background: #f4f8ff;
+}
+.railItemActive {
+  color: #101820;
+}
+.railItem svg {
+  stroke: currentColor;
+}
+.railDivider {
+  width: 68px;
+  height: 1px;
+  margin: 3px 0 1px;
+  background: #dedfe1;
+}
+.railBottom {
+  margin-top: auto;
+}
+@media (max-width: 1100px) {
+  .railItem {
+    width: 58px;
+  }
+  .railDivider {
+    width: 54px;
+  }
+}

@@ -1,0 +1,256 @@
+.conversation {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+.conversationHeader {
+  z-index: 3;
+  display: flex;
+  height: 75px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 27px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #edf0f3;
+}
+.backButton,
+.headerAction {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  color: #101820;
+  background: transparent;
+}
+.backButton {
+  margin-right: 2px;
+}
+.headerAction {
+  margin-left: auto;
+}
+.backButton:hover,
+.headerAction:hover {
+  color: #197cf0;
+}
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contactInfo strong {
+  font-size: 17px;
+  letter-spacing: -0.025em;
+}
+.contactInfo span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #999fa4;
+  font-size: 13px;
+}
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #35bf72;
+}
+.messageArea {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  background-color: #a3d7f4;
+  opacity: 0.96;
+  background-image:
+    radial-gradient(
+      circle at 20% 40%,
+      transparent 0 17px,
+      rgba(51, 148, 224, 0.18) 18px 19px,
+      transparent 20px
+    ),
+    radial-gradient(
+      circle at 74% 22%,
+      transparent 0 24px,
+      rgba(51, 148, 224, 0.15) 25px 26px,
+      transparent 27px
+    ),
+    linear-gradient(27deg, transparent 42%, rgba(51, 148, 224, 0.09) 43% 44%, transparent 45%);
+  background-size:
+    165px 165px,
+    220px 220px,
+    180px 180px;
+}
+.wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.5px);
+  background-size: 30px 30px;
+}
+.messages {
+  z-index: 1;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1;
+  padding: 28px 5.5% 105px;
+}
+.messages::-webkit-scrollbar {
+  width: 7px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(72, 146, 197, 0.35);
+  border-radius: 4px;
+}
+.messageRow {
+  position: relative;
+  display: flex;
+  margin: 4px 0;
+  justify-content: flex-start;
+}
+.messageRowOutgoing {
+  justify-content: flex-end;
+}
+.messageBubble {
+  position: relative;
+  display: flex;
+  max-width: min(550px, 76%);
+  flex-direction: column;
+  padding: 11px 13px 7px;
+  color: #15202a;
+  background: #fff;
+  border-radius: 12px 12px 12px 3px;
+  box-shadow: 0 2px 3px rgba(33, 71, 95, 0.12);
+  font-size: 15px;
+  line-height: 1.35;
+}
+.messageBubbleOutgoing {
+  background: #d9f8c8;
+  border-radius: 12px 12px 3px 12px;
+}
+.messageBubble small {
+  align-self: flex-end;
+  margin-top: 4px;
+  color: #97a3a0;
+  font-size: 10px;
+  line-height: 1;
+}
+.messageBubble em {
+  color: #1b93ec;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: -3px;
+}
+.messageBubble .failed {
+  color: #e94f4f;
+  letter-spacing: normal;
+}
+.tail {
+  position: absolute;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.messageRow:not(.messageRowOutgoing) .tail {
+  left: -2px;
+}
+.messageRowOutgoing .tail {
+  right: -2px;
+  transform: scaleX(-1);
+  background: #d9f8c8;
+}
+.emptyConversation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  margin: auto;
+  padding: 26px 32px;
+  color: #426c86;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+}
+.emptyConversation strong {
+  color: #2e5268;
+  font-size: 16px;
+}
+.emptyConversation span {
+  font-size: 13px;
+}
+.emptyIcon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  color: #fff;
+  background: #63b4e8;
+  border-radius: 50%;
+}
+.composer {
+  z-index: 2;
+  position: absolute;
+  right: 15%;
+  bottom: 16px;
+  left: 15%;
+  display: flex;
+  height: 57px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(29, 74, 102, 0.08);
+}
+.composer input {
+  min-width: 0;
+  flex: 1;
+  outline: 0;
+  border: 0;
+  color: #17232c;
+  background: transparent;
+  font-size: 16px;
+}
+.composer input::placeholder {
+  color: #92979c;
+}
+.composerIcon,
+.sendButton {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  color: #8c949a;
+  background: transparent;
+  border-radius: 50%;
+}
+.composerIcon:hover {
+  color: #2385ec;
+  background: #f3f8fd;
+}
+.sendButton {
+  color: #fff;
+  background: #1685f7;
+}
+.sendButton:hover {
+  background: #0678e7;
+}
+.sendButton:disabled {
+  opacity: 0.6;
+}
+@media (max-width: 1100px) {
+  .composer {
+    right: 7%;
+    left: 7%;
+  }
+}
